@@ -1,0 +1,140 @@
+.Weather {
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  max-width: 45rem;
+}
+.Weather form {
+  text-align: center;
+}
+.Weather input {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 18px;
+}
+
+.Weather .city-input {
+  background-color: transparent;
+  border: solid;
+  border-color: #faefeb;
+  border-width: 1px;
+  border-radius: 4px;
+  color: #336e8c;
+}
+.Weather .submit {
+  background-color: #336e8c;
+  border: solid;
+  border-color: #faefeb;
+  border-radius: 4px;
+  transition: ease-in-out 200ms;
+  color: #faefeb;
+  box-shadow: 2px 2px 5px #336e8c;
+  border-width: 1px;
+}
+.Weather .submit:hover {
+  background-color: #faefeb;
+  color: #336e8c;
+}
+.Weather .location-button {
+  background-color: #336e8c;
+  border: solid;
+  border-color: #faefeb;
+  border-radius: 4px;
+  transition: ease-in-out 200ms;
+  color: #faefeb;
+  box-shadow: 2px 2px 5px #336e8c;
+  border-width: 1px;
+  padding: 1px 6px 4px;
+}
+.Weather .location-button:hover {
+  background-color: #faefeb;
+  color: #336e8c;
+}
+.Weather .arrow {
+  position: relative;
+  top: 2px;
+}
+
+.Weather .current-city {
+  text-transform: capitalize;
+}
+.Weather .current-time {
+  margin: 0;
+  font-size: 26px;
+}
+.Weather .current-weather {
+  color: #336e8c;
+  text-align: center;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 20px;
+}
+.Weather .current-temp {
+  position: relative;
+  left: 30px;
+  font-size: 65px;
+  margin-top: 30px;
+  margin-bottom: 0;
+  line-height: 20px;
+}
+.Weather .current-temp .active {
+  cursor: default;
+  font-size: 40px;
+  position: relative;
+  top: 10px;
+}
+.Weather .current-temp .active:hover {
+  color: #336e8c;
+  text-decoration: none;
+}
+.Weather .conditions {
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.Weather .change-unit {
+  font-size: 25px;
+  position: relative;
+  top: -30px;
+}
+.Weather .unit {
+  text-decoration: none;
+  color: #336e8c;
+}
+.Weather .unit:hover {
+  text-decoration: underline;
+  color: #a9bbc9;
+}
+.Weather .icon {
+  width: 100px;
+  line-height: 0;
+}
+.Weather .sky-description {
+  text-transform: capitalize;
+}
+.Weather .weekly-weather {
+  color: #336e8c;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  padding: 0;
+  text-align: center;
+  top: 20px;
+  background-color: transparent;
+  box-shadow: 2px 2px 5px;
+}
+.Weather .weather-details {
+  font-weight: 600;
+}
+
+.Weather .open-source-link {
+  color: #336e8c;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 18px;
+}
+.Weather .weekly {
+  padding: 0;
+  margin-bottom: 0;
+  font-size: 30px;
+  line-height: 60px;
+}
+.Weather .forecast-icon {
+  width: 50px;
+}
+.Weather .forecast-card {
+  padding: 16px 0 16px;
+}
