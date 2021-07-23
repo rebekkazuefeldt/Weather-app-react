@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col } from "boostrap";
 
 export default function Weather() {
   const [city, setCity] = useState("");
@@ -14,8 +13,8 @@ export default function Weather() {
     console.log(response.data);
     setWeather({
       currentCity: response.data.name,
-      temperature: response.data.main.temp,
-      wind: response.data.wind.speed,
+      temperature: Math.round(response.data.main.temp),
+      wind: Math.round(response.data.wind.speed),
       humidity: response.data.main.humidity,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
@@ -66,7 +65,7 @@ export default function Weather() {
             {/*<h2 className="current-time">Last Updated: {weatherData.date}</h2>*/}
             <hr />
             <p className="current-temp">
-              <span>{Math.round(weather.temperature)}</span>
+              <span>{weather.temperature}</span>
               <span className="change-unit">
                 <a href="#" className="unit active">
                   F
@@ -92,18 +91,14 @@ export default function Weather() {
               H: <span>75</span>° / L: <span>68</span>°
             </p>
             <hr />
-            <Container>
-              <Row>
-                <Col xs="6">Wind</Col>
-                <Col xs="6">Humidity</Col>
-                <Col xs="6" className="weather-details">
-                  {weather.wind} mph
-                </Col>
-                <Col xs="6" className="weather-details">
-                  {weather.humidity}%
-                </Col>
-              </Row>
-            </Container>
+            <div className="container">
+              <div className="row">
+                <div className="col-6">Wind</div>
+                <div className="col-6">Humidity</div>
+                <div className="col-6 weather-details">{weather.wind} mph</div>
+                <div className="col-6 weather-details">{weather.humidity}%</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
