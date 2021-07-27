@@ -67,13 +67,13 @@ export default function Weather() {
             <p className="current-temp">
               <span>{weather.temperature}</span>
               <span className="change-unit">
-                <a href="#" className="unit active">
+                <button href="#" className="unit active">
                   F
-                </a>{" "}
+                </button>{" "}
                 |
-                <a href="#" className="unit">
+                <button href="#" className="unit">
                   C
-                </a>
+                </button>
               </span>
             </p>
             <p className="conditions">
