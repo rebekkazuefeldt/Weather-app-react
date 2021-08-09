@@ -9,16 +9,19 @@ export default function Weather() {
   const [weather, setWeather] = useState({});
 
   function displayWeather(response) {
-    setLoaded(true);
+    console.log(response);
     setWeather({
       currentCity: response.data.name,
       temperature: Math.round(response.data.main.temp),
+      lowTemp: Math.round(response.data.main.temp_min),
+      highTemp: Math.round(response.data.main.temp_max),
       wind: Math.round(response.data.wind.speed),
       date: new Date(response.data.dt * 1000),
       humidity: response.data.main.humidity,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
     });
+    setLoaded(true);
   }
 
   function handleSubmit(event) {
@@ -72,7 +75,7 @@ export default function Weather() {
                 <button href="#" className="unit active">
                   F
                 </button>{" "}
-                |
+                |{" "}
                 <button href="#" className="unit">
                   C
                 </button>
@@ -90,7 +93,8 @@ export default function Weather() {
               <span className="sky-description">{weather.description}</span>
             </p>
             <p>
-              H: <span>75</span>° / L: <span>68</span>°
+              H: <span>{weather.highTemp}</span>° / L:{" "}
+              <span>{weather.lowTemp}</span>°
             </p>
             <hr />
             <div className="container">

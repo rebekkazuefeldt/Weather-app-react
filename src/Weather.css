@@ -54,6 +54,7 @@
 
 .Weather .current-city {
   text-transform: capitalize;
+  margin-top: 10px;
 }
 .Weather .current-time {
   margin: 0;
@@ -96,6 +97,8 @@
 .Weather .unit {
   text-decoration: none;
   color: #336e8c;
+  border: none;
+  background: transparent;
 }
 .Weather .unit:hover {
   text-decoration: underline;

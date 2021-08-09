@@ -25,15 +25,13 @@ export default function FormattedDate(props) {
     "December",
   ];
   let day = days[props.date.getDay()];
+  let date = props.date.getDate();
   let month = months[props.date.getMonth()];
   let hours = props.date.getHours();
   let minutes = props.date.getMinutes();
   return (
     <div>
-      {day}
-      {month}
-      {hours}
-      {minutes}
+      Last Updated: {day}, {month} {date} at {hours}:{minutes}
     </div>
   );
 }
