@@ -1,6 +1,7 @@
 .Weather {
   background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
   max-width: 45rem;
+  margin: 30px auto;
 }
 .Weather form {
   text-align: center;
@@ -140,4 +141,7 @@
 }
 .Weather .forecast-card {
   padding: 16px 0 16px;
+}
+.Weather .loading {
+  margin-left: 100px;
 }

@@ -3,13 +3,13 @@ import axios from "axios";
 import "./Weather.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FormattedDate from "./FormattedDate";
-export default function Weather() {
-  const [city, setCity] = useState("");
+import UnitConversion from "./UnitConversion";
+export default function Weather(props) {
+  const [city, setCity] = useState(props.defaultCity);
   const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState({});
 
   function displayWeather(response) {
-    console.log(response);
     setWeather({
       currentCity: response.data.name,
       temperature: Math.round(response.data.main.temp),
@@ -23,12 +23,14 @@ export default function Weather() {
     });
     setLoaded(true);
   }
-
-  function handleSubmit(event) {
-    event.preventDefault();
+  function search() {
     let apiKey = "2005b16f2536bde86914bfb6c901642a";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(displayWeather);
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
   }
 
   function updateCity(event) {
@@ -69,18 +71,7 @@ export default function Weather() {
               <FormattedDate date={weather.date} />
             </h2>
             <hr />
-            <p className="current-temp">
-              <span>{weather.temperature}</span>
-              <span className="change-unit">
-                <button href="#" className="unit active">
-                  F
-                </button>{" "}
-                |{" "}
-                <button href="#" className="unit">
-                  C
-                </button>
-              </span>
-            </p>
+            <UnitConversion fahrenheit={weather.temperature} />
             <p className="conditions">
               <span>
                 <img
@@ -110,6 +101,7 @@ export default function Weather() {
       </div>
     );
   } else {
-    return form;
+    search();
+    return <div className="loading">Loading...</div>;
   }
 }
