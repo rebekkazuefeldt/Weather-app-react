@@ -28,7 +28,7 @@ export default function UnitConversion(props) {
       </p>
     );
   } else {
-    let celsius = ((props.fahrenheit - 32) * 5) / 9;
+    let celsius = Math.round(((props.fahrenheit - 32) * 5) / 9);
     return (
       <p className="current-temp">
         <span>{celsius}</span>
