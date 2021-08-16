@@ -22,6 +22,7 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       icon: response.data.weather[0].icon,
       description: response.data.weather[0].description,
+      coordinates: response.data.coord,
     });
     setLoaded(true);
   }
@@ -104,7 +105,7 @@ export default function Weather(props) {
               <br />
               <div class="card weekly-weather">
                 <div class="card-body forecast-card">
-                  <WeatherForecast />
+                  <WeatherForecast coordinates={weather.coordinates} />
                 </div>
               </div>
             </div>
