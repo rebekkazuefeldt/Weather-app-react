@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import FormattedDate from "./FormattedDate";
 import UnitConversion from "./UnitConversion";
 import WeatherIcon from "./WeatherIcon";
+import WeatherForecast from "./WeatherForecast";
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [loaded, setLoaded] = useState(false);
@@ -57,31 +58,50 @@ export default function Weather(props) {
       <div className="card Weather">
         <div className="card-body">
           {form}
-          <div className="current-weather">
-            <h1 className="current-city">{weather.currentCity}</h1>
-            <h2 className="current-time">
-              <FormattedDate date={weather.date} />
-            </h2>
-            <hr />
-            <UnitConversion fahrenheit={weather.temperature} />
-            <p className="conditions">
-              <span>
-                <WeatherIcon code={weather.icon} alt={weather.description} />
-              </span>
+          <div className="row">
+            <div className="col-6">
+              <div className="current-weather">
+                <h1 className="current-city">{weather.currentCity}</h1>
+                <h2 className="current-time">
+                  <FormattedDate date={weather.date} />
+                </h2>
+                <hr />
+                <UnitConversion fahrenheit={weather.temperature} />
+                <p className="conditions">
+                  <span>
+                    <WeatherIcon
+                      code={weather.icon}
+                      alt={weather.description}
+                    />
+                  </span>
+                  <br />
+                  <span className="sky-description">{weather.description}</span>
+                </p>
+                <p>
+                  H: <span>{weather.highTemp}</span>° / L:{" "}
+                  <span>{weather.lowTemp}</span>°
+                </p>
+                <hr />
+                <div className="container">
+                  <div className="row">
+                    <div className="col-6">Wind</div>
+                    <div className="col-6">Humidity</div>
+                    <div className="col-6 weather-details">
+                      {weather.wind} mph
+                    </div>
+                    <div className="col-6 weather-details">
+                      {weather.humidity}%
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-6">
               <br />
-              <span className="sky-description">{weather.description}</span>
-            </p>
-            <p>
-              H: <span>{weather.highTemp}</span>° / L:{" "}
-              <span>{weather.lowTemp}</span>°
-            </p>
-            <hr />
-            <div className="container">
-              <div className="row">
-                <div className="col-6">Wind</div>
-                <div className="col-6">Humidity</div>
-                <div className="col-6 weather-details">{weather.wind} mph</div>
-                <div className="col-6 weather-details">{weather.humidity}%</div>
+              <div class="card weekly-weather">
+                <div class="card-body forecast-card">
+                  <WeatherForecast />
+                </div>
               </div>
             </div>
           </div>
