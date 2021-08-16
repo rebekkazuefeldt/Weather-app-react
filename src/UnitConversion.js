@@ -15,7 +15,7 @@ export default function UnitConversion(props) {
   if (unit === "fahrenheit") {
     return (
       <p className="current-temp">
-        <span>{props.fahrenheit}</span>
+        <span>{props.fahrenheit}°</span>
         <span className="change-unit">
           <button href="#" className="unit active">
             F
@@ -31,7 +31,7 @@ export default function UnitConversion(props) {
     let celsius = Math.round(((props.fahrenheit - 32) * 5) / 9);
     return (
       <p className="current-temp">
-        <span>{celsius}</span>
+        <span>{celsius}°</span>
         <span className="change-unit">
           <button href="#" className="unit" onClick={convertToFahrenheit}>
             F

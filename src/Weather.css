@@ -18,6 +18,8 @@
   border-width: 1px;
   border-radius: 4px;
   color: #336e8c;
+  margin-right: 5px;
+  width: 200px;
 }
 .Weather .submit {
   background-color: #336e8c;
@@ -28,6 +30,7 @@
   color: #faefeb;
   box-shadow: 2px 2px 5px #336e8c;
   border-width: 1px;
+  width: 70px;
 }
 .Weather .submit:hover {
   background-color: #faefeb;
@@ -69,7 +72,7 @@
 }
 .Weather .current-temp {
   position: relative;
-  left: 30px;
+  left: 40px;
   font-size: 65px;
   margin-top: 30px;
   margin-bottom: 0;
