@@ -4,6 +4,7 @@ import "./Weather.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FormattedDate from "./FormattedDate";
 import UnitConversion from "./UnitConversion";
+import WeatherIcon from "./WeatherIcon";
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [loaded, setLoaded] = useState(false);
@@ -18,7 +19,7 @@ export default function Weather(props) {
       wind: Math.round(response.data.wind.speed),
       date: new Date(response.data.dt * 1000),
       humidity: response.data.main.humidity,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       description: response.data.weather[0].description,
     });
     setLoaded(true);
@@ -51,15 +52,6 @@ export default function Weather(props) {
     </form>
   );
 
-  //let weatherData = {
-  //city: "New York",
-  //date: "Thursday 21:29",
-  //temperature: 70,
-  //description: "Sunny",
-  //imgUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
-  //humidity: 30,
-  //wind: 2,
-  //};
   if (loaded) {
     return (
       <div className="card Weather">
@@ -74,11 +66,7 @@ export default function Weather(props) {
             <UnitConversion fahrenheit={weather.temperature} />
             <p className="conditions">
               <span>
-                <img
-                  src={weather.icon}
-                  alt={weather.description}
-                  className="icon"
-                />
+                <WeatherIcon code={weather.icon} alt={weather.description} />
               </span>
               <br />
               <span className="sky-description">{weather.description}</span>
