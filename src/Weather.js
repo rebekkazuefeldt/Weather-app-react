@@ -77,15 +77,19 @@ export default function Weather(props) {
                   <br />
                   <span className="sky-description">{weather.description}</span>
                 </p>
-                <p>
+                <p className="current-high-low">
                   H: <span>{weather.highTemp}</span>° / L:{" "}
                   <span>{weather.lowTemp}</span>°
                 </p>
                 <hr />
                 <div className="container">
                   <div className="row">
-                    <div className="col-6">Wind</div>
-                    <div className="col-6">Humidity</div>
+                    <div className="col-6">
+                      <em>Wind</em>
+                    </div>
+                    <div className="col-6">
+                      <em>Humidity</em>
+                    </div>
                     <div className="col-6 weather-details">
                       {weather.wind} mph
                     </div>

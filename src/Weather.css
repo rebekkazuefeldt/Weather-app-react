@@ -59,6 +59,7 @@
 .Weather .current-city {
   text-transform: capitalize;
   margin-top: 10px;
+  font-size: 50px;
 }
 .Weather .current-time {
   margin: 0;
@@ -108,13 +109,17 @@
   text-decoration: underline;
   color: #a9bbc9;
 }
+.Weather .sky-description {
+  text-transform: capitalize;
+  font-size: 30px;
+}
+.Weather .current-high-low {
+  font-size: 25px;
+}
 .Weather canvas {
   width: 100px;
   line-height: 0;
   margin-top: 10px;
-}
-.Weather .sky-description {
-  text-transform: capitalize;
 }
 .Weather .weekly-weather {
   color: #336e8c;
