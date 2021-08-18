@@ -72,6 +72,7 @@ export default function Weather(props) {
                   <span>
                     <WeatherIcon
                       code={weather.icon}
+                      size={120}
                       alt={weather.description}
                     />
                   </span>
@@ -103,8 +104,8 @@ export default function Weather(props) {
             </div>
             <div className="col-6">
               <br />
-              <div class="card weekly-weather">
-                <div class="card-body forecast-card">
+              <div className="card weekly-weather">
+                <div className="card-body forecast-card">
                   <WeatherForecast coordinates={weather.coordinates} />
                 </div>
               </div>
