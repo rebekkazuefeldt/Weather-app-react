@@ -72,7 +72,7 @@ export default function Weather(props) {
                   <span>
                     <WeatherIcon
                       code={weather.icon}
-                      size={120}
+                      size={100}
                       alt={weather.description}
                     />
                   </span>

@@ -118,7 +118,6 @@
   font-size: 25px;
 }
 .Weather canvas {
-  width: 100px;
   line-height: 0;
   margin-top: 10px;
 }
@@ -145,6 +144,7 @@
   font-size: 30px;
   line-height: 60px;
 }
+
 .Weather .forecast-icon {
   width: 50px;
 }
