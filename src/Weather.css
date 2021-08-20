@@ -3,6 +3,9 @@
   max-width: 40rem;
   margin: 30px auto;
 }
+.card {
+  margin-bottom: 0;
+}
 .Weather form {
   text-align: center;
 }
@@ -154,4 +157,16 @@
 }
 .Weather .loading {
   margin-left: 100px;
+}
+.footer {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  color: #336e8c;
+  font-size: 20px;
+}
+.github-link {
+  color: #336e8c;
+}
+.github-link:hover {
+  text-decoration: none;
+  color: #b7e2f6;
 }

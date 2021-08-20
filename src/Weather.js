@@ -56,61 +56,74 @@ export default function Weather(props) {
 
   if (loaded) {
     return (
-      <div className="card Weather">
-        <div className="card-body">
-          {form}
-          <div className="row">
-            <div className="col-6">
-              <div className="current-weather">
-                <h1 className="current-city">{weather.currentCity}</h1>
-                <h2 className="current-time">
-                  <FormattedDate date={weather.date} />
-                </h2>
-                <hr />
-                <UnitConversion fahrenheit={weather.temperature} />
-                <p className="conditions">
-                  <span>
-                    <WeatherIcon
-                      code={weather.icon}
-                      size={100}
-                      alt={weather.description}
-                    />
-                  </span>
-                  <br />
-                  <span className="sky-description">{weather.description}</span>
-                </p>
-                <p className="current-high-low">
-                  H: <span>{weather.highTemp}</span>° / L:{" "}
-                  <span>{weather.lowTemp}</span>°
-                </p>
-                <hr />
-                <div className="container">
-                  <div className="row">
-                    <div className="col-6">
-                      <em>Wind</em>
-                    </div>
-                    <div className="col-6">
-                      <em>Humidity</em>
-                    </div>
-                    <div className="col-6 weather-details">
-                      {weather.wind} mph
-                    </div>
-                    <div className="col-6 weather-details">
-                      {weather.humidity}%
+      <div>
+        <div className="card Weather">
+          <div className="card-body">
+            {form}
+            <div className="row">
+              <div className="col-6">
+                <div className="current-weather">
+                  <h1 className="current-city">{weather.currentCity}</h1>
+                  <h2 className="current-time">
+                    <FormattedDate date={weather.date} />
+                  </h2>
+                  <hr />
+                  <UnitConversion fahrenheit={weather.temperature} />
+                  <p className="conditions">
+                    <span>
+                      <WeatherIcon
+                        code={weather.icon}
+                        size={100}
+                        alt={weather.description}
+                      />
+                    </span>
+                    <br />
+                    <span className="sky-description">
+                      {weather.description}
+                    </span>
+                  </p>
+                  <p className="current-high-low">
+                    H: <span>{weather.highTemp}</span>° / L:{" "}
+                    <span>{weather.lowTemp}</span>°
+                  </p>
+                  <hr />
+                  <div className="container">
+                    <div className="row">
+                      <div className="col-6">
+                        <em>Wind</em>
+                      </div>
+                      <div className="col-6">
+                        <em>Humidity</em>
+                      </div>
+                      <div className="col-6 weather-details">
+                        {weather.wind} mph
+                      </div>
+                      <div className="col-6 weather-details">
+                        {weather.humidity}%
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-6">
-              <br />
-              <div className="card weekly-weather">
-                <div className="card-body forecast-card">
-                  <WeatherForecast coordinates={weather.coordinates} />
+              <div className="col-6">
+                <br />
+                <div className="card weekly-weather">
+                  <div className="card-body forecast-card">
+                    <WeatherForecast coordinates={weather.coordinates} />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+        <div className="footer">
+          <a
+            className="github-link"
+            href="https://github.com/rebekkazuefeldt/Weather-app-react"
+          >
+            Open sourced
+          </a>{" "}
+          code by Rebekka Zuefeldt
         </div>
       </div>
     );

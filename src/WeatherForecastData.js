@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import WeatherIcon from "./WeatherIcon";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Weather.css";
