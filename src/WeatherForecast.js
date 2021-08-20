@@ -12,8 +12,19 @@ export default function WeatherForecast(props) {
     setLoaded(true);
   }
   if (loaded) {
-    console.log(forecast);
-    return <WeatherForecastData data={forecast[0]} />;
+    return (
+      <div>
+        {forecast.map(function (dailyForecast, index) {
+          if (index > 0 && index < 6) {
+            return (
+              <div key={index}>
+                <WeatherForecastData data={dailyForecast} />
+              </div>
+            );
+          }
+        })}
+      </div>
+    );
   } else {
     let apiKey = "2005b16f2536bde86914bfb6c901642a";
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.coordinates.lat}&lon=${props.coordinates.lon}&appid=${apiKey}&units=imperial`;
