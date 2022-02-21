@@ -170,3 +170,8 @@
   text-decoration: none;
   color: #b7e2f6;
 }
+@media (max-width: 330px) {
+  .Weather .weekly {
+    font-size: 25px;
+  }
+}
