@@ -61,7 +61,7 @@ export default function Weather(props) {
           <div className="card-body">
             {form}
             <div className="row">
-              <div className="col-6">
+              <div className="col-md-6">
                 <div className="current-weather">
                   <h1 className="current-city">{weather.currentCity}</h1>
                   <h2 className="current-time">
@@ -105,7 +105,7 @@ export default function Weather(props) {
                   </div>
                 </div>
               </div>
-              <div className="col-6">
+              <div className="col-md-6">
                 <br />
                 <div className="card weekly-weather">
                   <div className="card-body forecast-card">
