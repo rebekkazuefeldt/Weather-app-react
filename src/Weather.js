@@ -106,7 +106,9 @@ export default function Weather(props) {
                 </div>
               </div>
               <div className="col-md-6">
-                <br />
+                <br className="break" />
+                <br className="break" />
+                <br className="break" />
                 <div className="card weekly-weather">
                   <div className="card-body forecast-card">
                     <WeatherForecast coordinates={weather.coordinates} />

@@ -170,8 +170,30 @@
   text-decoration: none;
   color: #b7e2f6;
 }
-@media (max-width: 330px) {
+@media (max-width: 360px) {
   .Weather .weekly {
-    font-size: 25px;
+    font-size: 24px;
+  }
+  .break {
+    display: none;
+  }
+}
+@media (max-width: 770px) {
+  .card {
+    margin-left: 22px;
+    padding-bottom: 12px;
+  }
+  .weekly-weather {
+    position: relative;
+    left: -10px;
+  }
+  .break {
+    display: none;
+  }
+  .Weather .active {
+    padding: 2px;
+  }
+  .submit {
+    padding: 2px;
   }
 }
